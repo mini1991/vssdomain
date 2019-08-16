@@ -1,0 +1,8 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^localhost/dbtest$
+RewriteCond %{REQUEST_URI} !^/admin/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /admin/$1
+RewriteCond %{HTTP_HOST} ^localhost/dbtest$
+RewriteRule ^(/)?$ admin/users.php [L]
